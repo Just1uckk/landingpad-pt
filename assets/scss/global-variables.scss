@@ -1,0 +1,123 @@
+@import 'helpers/placeholders';
+@import 'mixins/background-decor';
+
+// Colors
+$white: #fff;
+$light: #f9fbff;
+$lightness: #f2f6ff;
+$light-900: #dbebff;
+$gray: #757575;
+$gray-400: #b3b3b3;
+$gray-600: #dcdcdcff;
+$danger: #ff9d9d;
+$danger-dark: #ff4a4a;
+$success: #28a745;
+$dark: #0f0f10;
+
+$primary: #2967f0;
+$primary-light: #6e8dff;
+$primary-dark: #0f38b4;
+
+$primary-dim: #5485F3;
+
+$primary-logo: #3968e8;
+
+:root {
+  --primary: #2967f0;
+  --primary-opacity-80: rgba(41, 103, 240, 0.8);
+
+  --primary-lighten-10: #3060C9;
+  --primary-lighten-30: #b8cdfa;
+  --primary-lighten-40: #DBEBFF;
+
+  --primary-light: #6e8dff;
+  --primary-dark: #0f38b4;
+
+  --primary-dim: #5485F3;
+
+  --primary-logo: #3968e8;
+}
+
+.purple-theme {
+  --primary: #9E66D4;
+  --primary-opacity-80: rgba(158, 102, 212, 0.8);
+
+  --primary-lighten-10: #895CB4;
+  --primary-lighten-30: #eaddf6;
+  --primary-lighten-40: #EFEAF9;
+
+  --primary-light: #ba70ff;
+  --primary-dark: #714A99;
+
+  --primary-dim: #9E66D4;
+
+  --primary-logo: #966ace;
+}
+
+.green-theme {
+  --primary: #549780;
+  --primary-opacity-80: rgba(84, 151, 128, 0.8);
+
+  --primary-lighten-10: #4B816E;
+  --primary-lighten-30: #b1d3c7;
+  --primary-lighten-40: #E7F0EC;
+
+  --primary-light: #5aba99;
+  --primary-dark: #376E5B;
+
+  --primary-dim: #549780;
+
+  --primary-logo: #649581;
+
+}
+
+.lime-theme {
+  --primary: #17CDCC;
+  --primary-opacity-80: rgba(23, 205, 204, 0.8);
+
+  --primary-lighten-10: #19BEBD;
+  --primary-lighten-30: #8bf2f1;
+  --primary-lighten-40: #DFF7F8;
+
+  --primary-light: #18dfdf;
+  --primary-dark: #14A4AD;
+
+  --primary-dim: #17CDCC;
+  --primary-logo: #5fcaca;
+}
+
+$primary: var(--primary);
+$primary-opacity-80: var(--primary-opacity-80);
+
+$primary-lighten-10: var(--primary-lighten-10);
+$primary-lighten-30: var(--primary-lighten-30);
+$primary-lighten-40: var(--primary-lighten-40);
+
+$primary-light: var(--primary-light);
+$primary-dark:var(--primary-dark);
+
+$primary-dim:var(--primary-dim);
+
+$primary-logo:var(--primary-logo);
+
+//Box shadow
+$box-shadow-primary: 0px 14px 28px rgba(203, 203, 203, 0.25);
+$box-shadow-secondary: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+// Button
+$btn-padding-x: 40px;
+$btn-padding-y: 14px;
+
+// Transition
+$transition-time-main: 0.5s;
+
+// Font
+$font-size: 1rem;
+$font-family-primary: 'Futura', sans-serif;
+
+// Media breakpoint
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

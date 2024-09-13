@@ -1,0 +1,88 @@
+<template>
+  <GmapMap
+    :center="{lat, lng}"
+    :zoom="13"
+    map-type-id="terrain"
+  >
+    <GmapMarker
+      :position="marker.position"
+      :clickable="true"
+      :draggable="false"
+      :options="markerOptions"
+      @click="openInfoWindow"
+    />
+    <GmapInfoWindow v-if="infoWindowOpen" :position="marker.position" :opened="true" @closeclick="closeInfoWindow">
+      <div>{{ marker.info }}</div>
+    </GmapInfoWindow>
+  </GmapMap>
+</template>
+
+<script>
+
+export default {
+  name: 'GoogleMap',
+  props: {
+    lat: {
+      type: Number,
+      required: true
+    },
+    address: {
+      type: String,
+      required: true
+    },
+    lng: {
+      type: Number,
+      required: true
+
+    },
+
+  },
+  data() {
+    return {
+      infoWindowOpen: true,
+      center: {lat: this.lat, lng: this.lng},
+      position: {lat: this.lat, lng: this.lng},
+      marker:
+        {
+          position: {lat: this.lat, lng: this.lng},
+          info: this.address
+        },
+
+    }
+  },
+  computed: {
+    markerOptions() {
+      return {
+        icon: {
+          path: 'M20.9398 3.38905C19.4989 2.19211 17.8141 1.33452 16.007 0.878121C14.1999 0.421725 12.3155 0.377903 10.4896 0.749817C8.14199 1.23812 5.98219 2.40078 4.2675 4.0993C2.5528 5.79781 1.3555 7.96058 0.818216 10.33C0.280929 12.6994 0.426304 15.1755 1.23702 17.4635C2.04774 19.7514 3.48963 21.7547 5.39094 23.2347C7.56171 24.8466 9.40996 26.8633 10.8369 29.1769L11.8091 30.817C11.9326 31.0254 12.1071 31.1978 12.3157 31.3174C12.5242 31.4371 12.7598 31.5 12.9994 31.5C13.239 31.5 13.4746 31.4371 13.6831 31.3174C13.8917 31.1978 14.0662 31.0254 14.1897 30.817L15.1216 29.2417C16.3642 27.0257 18.0584 25.1041 20.0912 23.6053C21.6851 22.4927 23.0024 21.0196 23.9391 19.3021C24.8757 17.5846 25.4062 15.6698 25.4887 13.7088C25.5711 11.7477 25.2032 9.79403 24.414 8.0019C23.6248 6.20976 22.436 4.6282 20.9412 3.382L20.9398 3.38905ZM12.998 18.82C11.8992 18.82 10.8251 18.4895 9.91145 17.8701C8.99783 17.2508 8.28575 16.3705 7.86526 15.3406C7.44476 14.3107 7.33474 13.1774 7.54911 12.084C7.76348 10.9907 8.2926 9.98639 9.06957 9.19813C9.84654 8.40987 10.8365 7.87306 11.9142 7.65558C12.9918 7.4381 14.1089 7.54972 15.1241 7.97632C16.1392 8.40293 17.0069 9.12535 17.6174 10.0522C18.2278 10.9791 18.5536 12.0689 18.5536 13.1837C18.5536 14.6785 17.9683 16.1121 16.9264 17.1692C15.8846 18.2262 14.4715 18.82 12.998 18.82Z',
+          fillColor: '#2967F0',
+          fillOpacity: 1,
+          strokeWeight: 0,
+        },
+      };
+    },
+
+  },
+  methods: {
+    openInfoWindow() {
+      this.infoWindowOpen = !this.infoWindowOpen;
+    },
+    closeInfoWindow() {
+      this.infoWindowOpen = false;
+    },
+  },
+
+
+}
+</script>
+<style lang="scss" scoped>
+
+.vue-map-container {
+  height: 424px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+</style>

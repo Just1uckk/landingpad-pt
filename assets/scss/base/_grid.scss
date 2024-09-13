@@ -1,0 +1,70 @@
+@if $enable-grid-classes {
+  .container {
+    @include make-container();
+  }
+
+  .container-fluid {
+    @include make-container();
+  }
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    .container-#{$breakpoint} {
+      @extend .container-fluid;
+    }
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      %responsive-container-#{$breakpoint} {
+        max-width: $container-max-width;
+      }
+
+      @each $name, $width in $grid-breakpoints {
+        @if ($container-max-width > $width or $breakpoint == $name) {
+          .container#{breakpoint-infix($name, $grid-breakpoints)} {
+            @extend %responsive-container-#{$breakpoint};
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+  }
+
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}
+
+
+.container-fluid {
+
+  @media (min-width: $sm) {
+    padding: 0 70px;
+  }
+
+  @media (min-width: $md) {
+    padding: 0 90px;
+  }
+
+  @media (min-width: $lg) {
+    padding: 0 110px;
+  }
+
+  @media (min-width: $xl) {
+    padding: 0 130px;
+  }
+}

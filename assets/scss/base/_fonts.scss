@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('~assets/fonts/FuturaDemiC.woff2') format('woff2'),
+  url('~assets/fonts/FuturaDemiC.woff') format('woff'),
+  url('~assets/fonts/FuturaDemiC.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('~assets/fonts/FuturaBookC.woff2') format('woff2'),
+  url('~assets/fonts/FuturaBookC.woff') format('woff'),
+  url('~assets/fonts/FuturaBookC.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Futura';
+  src: url('~assets/fonts/FuturaMediumC.woff2') format('woff2'),
+  url('~assets/fonts/FuturaMediumC.woff') format('woff'),
+  url('~assets/fonts/FuturaMediumC.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('~assets/fonts/FuturaLightC.woff2') format('woff2'),
+  url('~assets/fonts/FuturaLightC.woff') format('woff'),
+  url('~assets/fonts/FuturaLightC.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+

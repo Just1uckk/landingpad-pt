@@ -1,0 +1,92 @@
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  max-height: 80vh;
+  max-width: 80vw;
+  margin: 15px auto;
+  @media (max-width: 1400px) {
+    max-width: 88vw;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  height: 54px;
+  width: 54px;
+  border: none;
+  padding: 18px;
+  top: 0px;
+  right: -54px;
+  z-index: 1;
+  cursor: pointer;
+  background: rgba(15, 15, 16, 0.74);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  transition: background 0.3s ease-out;
+  @media (max-width: 1400px) {
+    top: -46px;
+    right: -46px;
+    padding: 12px;
+    height: 44px;
+    width: 46px;
+  }
+  @media (max-width: 1000px) {
+    right: 0px;
+    top: -50px;
+  }
+  @media (max-width: $sm) {
+    height: 34px;
+    width: 34px;
+    padding: 8px;
+    top: -40px;
+
+  }
+
+  &:hover {
+    background: rgba(57, 57, 59, 0.74);
+  }
+
+  svg {
+    fill: #fff;
+    width: 16px;
+    height: 16px;
+  }
+
+}

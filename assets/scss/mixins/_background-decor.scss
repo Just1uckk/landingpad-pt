@@ -1,0 +1,25 @@
+@mixin circleDecor($blur, $width, $height, $top: auto, $left: auto, $right: auto, $bottom: auto, $background: $lightness) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  filter: blur($blur);
+  border-radius: 50%;
+  background: $background;
+  z-index: -2;
+}
+
+@mixin lineClamp($amount){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $amount;
+  -webkit-box-orient: vertical;
+  line-clamp: $amount;
+  box-orient: vertical;
+}
